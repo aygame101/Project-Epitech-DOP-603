@@ -2,6 +2,9 @@
 
 
 ## Gestion Avancement du Projet
+🔴 To do  
+🟠 In progress  
+🟢 Done
 | Avancement | Tâches |
 | :--------- |:------ |
 | 🔴 To do | Le déploiement du Result est OK |
@@ -23,10 +26,10 @@
 | 🔴 To do | Le service Traefik est correctement configuré |
 | 🔴 To do | Les règles de routage du trafic Poll sont correctement définies |
 | 🔴 To do | L'affinité du Poll est correctement configurée |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
+| 🔴 To do | Les ressources du Poll sont correctement configurées |
+| 🔴 To do | L'affinité du Result est correctement configurée |
+| 🔴 To do | Les ressources du Result sont correctement configurées |
+| 🔴 To do | L'affinité du Traefik est correctement configurée |
+| 🔴 To do | Le monitoring des ressources et performances est correctement configuré |
+| 🔴 To do | La quantité et les chemins des volumes surveillés sont correctement configurés |
+| 🔴 To do | Toutes les tâches ont été effectuées |
