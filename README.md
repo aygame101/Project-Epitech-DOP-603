@@ -89,8 +89,3 @@ http://localhost:30042/dashboard#/
   
 ## Table sql  
 ``kubectl exec -i deployment/postgres -- psql -U postgres -c "CREATE TABLE IF NOT EXISTS votes (id VARCHAR(255) PRIMARY KEY, vote VARCHAR(255) NOT NULL);"``  
-  
-# Relancer :  
-  
-## Services applicatifs  
-``kubectl apply -f worker.deployment.yaml``  
