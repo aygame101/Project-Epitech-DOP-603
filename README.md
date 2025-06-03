@@ -7,32 +7,32 @@
 🟢 Done
 | Avancement | Tâches |
 | :--------- |:------ |
-| 🔴 To do | Le déploiement du Result est OK |
-| 🔴 To do | Le déploiement du Worker est OK |
-| 🔴 To do | Le déploiement de Postgres est OK |
-| 🔴 To do | Le déploiement de Redis est OK |
-| 🔴 To do | Le déploiement de Traefik est OK |
-| 🔴 To do | Le configmap de Postgres est OK |
-| 🔴 To do | Le configmap de Redis est OK |
-| 🔴 To do | Les secrets Postgres sont correctement définis et stockés |
-| 🔴 To do | Les variables d'environnement du Poll sont correctement définies |
-| 🔴 To do | Les variables d'environnement du Result sont correctement définies |
-| 🔴 To do | Les variables d'environnement de Postgres sont correctement définies |
-| 🔴 To do | Un volume persistant existe pour Postgres |
-| 🔴 To do | Le volume Postgres est déployé correctement |
-| 🔴 To do | Le service Postgres est correctement configuré |
-| 🔴 To do | Le service Redis est correctement configuré |
-| 🔴 To do | Le service Poll est correctement configuré |
-| 🔴 To do | Le service Traefik est correctement configuré |
-| 🔴 To do | Les règles de routage du trafic Poll sont correctement définies |
-| 🔴 To do | L'affinité du Poll est correctement configurée |
-| 🔴 To do | Les ressources du Poll sont correctement configurées |
-| 🔴 To do | L'affinité du Result est correctement configurée |
-| 🔴 To do | Les ressources du Result sont correctement configurées |
-| 🔴 To do | L'affinité du Traefik est correctement configurée |
-| 🔴 To do | Le monitoring des ressources et performances est correctement configuré |
-| 🔴 To do | La quantité et les chemins des volumes surveillés sont correctement configurés |
-| 🔴 To do | Toutes les tâches ont été effectuées |
+| 🟠 In progress | Le déploiement du Result est OK |
+| 🟠 In progress | Le déploiement du Worker est OK |
+| 🟠 In progress | Le déploiement de Postgres est OK |
+| 🟠 In progress | Le déploiement de Redis est OK |
+| 🟠 In progress | Le déploiement de Traefik est OK |
+| 🟠 In progress | Le configmap de Postgres est OK |
+| 🟠 In progress | Le configmap de Redis est OK |
+| 🟠 In progress | Les secrets Postgres sont correctement définis et stockés |
+| 🟠 In progress | Les variables d'environnement du Poll sont correctement définies |
+| 🟠 In progress | Les variables d'environnement du Result sont correctement définies |
+| 🟠 In progress | Les variables d'environnement de Postgres sont correctement définies |
+| 🟠 In progress | Un volume persistant existe pour Postgres |
+| 🟠 In progress | Le volume Postgres est déployé correctement |
+| 🟠 In progress | Le service Postgres est correctement configuré |
+| 🟠 In progress | Le service Redis est correctement configuré |
+| 🟠 In progress | Le service Poll est correctement configuré |
+| 🟠 In progress | Le service Traefik est correctement configuré |
+| 🟠 In progress | Les règles de routage du trafic Poll sont correctement définies |
+| 🟠 In progress | L'affinité du Poll est correctement configurée |
+| 🟠 In progress | Les ressources du Poll sont correctement configurées |
+| 🟠 In progress | L'affinité du Result est correctement configurée |
+| 🟠 In progress | Les ressources du Result sont correctement configurées |
+| 🟠 In progress | L'affinité du Traefik est correctement configurée |
+| 🟠 In progress | Le monitoring des ressources et performances est correctement configuré |
+| 🟠 In progress | La quantité et les chemins des volumes surveillés sont correctement configurés |
+| 🟠 In progress | Toutes les tâches ont été effectuées |
 
 
 # Lancer l'app :
