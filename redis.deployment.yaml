@@ -13,12 +13,21 @@ spec:
       labels:
         app: redis
     spec:
+      restartPolicy: Always
       containers:
       - name: redis
-        image: redis:alpine
-        resources:
-          limits:
-            memory: "128Mi"
+        image: redis:5.0
         ports:
         - containerPort: 6379
-      restartPolicy: Always
+        env:
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_PORT
+

@@ -4,7 +4,7 @@ metadata:
   name: traefik
   namespace: kube-public
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: traefik
@@ -13,21 +13,19 @@ spec:
       labels:
         app: traefik
     spec:
+      restartPolicy: Always
       serviceAccountName: traefik-account
       containers:
       - name: traefik
-        image: traefik:2.7
+        image: traefik:v2.10
+        ports:
+        - containerPort: 8000
+          name: web
+        - containerPort: 8080
+          name: admin
         args:
         - --api.insecure=true
+        - --providers.kubernetesingress=true
+        - --entrypoints.web.address=:8000
+        - --log.level=INFO
         - --api.dashboard=true
-        - --entrypoints.web.address=:80
-        - --entrypoints.admin.address=:9090
-        - --providers.kubernetesingress
-        ports:
-        - containerPort: 80
-          name: web
-        - containerPort: 9090
-          name: admin
-        resources:
-          limits:
-            memory: "128Mi"

@@ -16,10 +16,24 @@ spec:
       containers:
       - name: postgres
         image: postgres:13
-        resources:
-          limits:
-            memory: "512Mi"
+        ports:
+        - containerPort: 5432
         env:
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_HOST
+        - name: POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PORT
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_DB
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
@@ -30,16 +44,30 @@ spec:
             secretKeyRef:
               name: postgres-secret
               key: POSTGRES_PASSWORD
-        - name: POSTGRES_DB
-          valueFrom:
-            secretKeyRef:
-              name: postgres-secret
-              key: POSTGRES_DB
-        ports:
-        - containerPort: 5432
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
+        resources:
+          limits:
+            memory: "256Mi"
+          requests:
+            memory: "128Mi"
+        readinessProbe:
+          exec:
+            command:
+              - /bin/sh
+              - -c
+              - pg_isready -U postgres
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        livenessProbe:
+          exec:
+            command:
+              - /bin/sh
+              - -c
+              - pg_isready -U postgres
+          initialDelaySeconds: 30
+          periodSeconds: 10
       volumes:
       - name: postgres-storage
         persistentVolumeClaim:

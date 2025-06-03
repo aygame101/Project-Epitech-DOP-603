@@ -5,3 +5,4 @@ metadata:
   namespace: default
 data:
   REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"

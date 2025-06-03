@@ -13,18 +13,21 @@ spec:
       labels:
         app: worker
     spec:
+      restartPolicy: Always
       containers:
       - name: worker
         image: epitechcontent/t-dop-600-worker:k8s
-        resources:
-          limits:
-            memory: "256Mi"
         env:
         - name: REDIS_HOST
           valueFrom:
             configMapKeyRef:
               name: redis-config
               key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_PORT
         - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
@@ -50,4 +53,3 @@ spec:
             secretKeyRef:
               name: postgres-secret
               key: POSTGRES_PASSWORD
-      restartPolicy: Always

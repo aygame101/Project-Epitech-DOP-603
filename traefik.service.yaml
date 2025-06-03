@@ -4,15 +4,15 @@ metadata:
   name: traefik-service
   namespace: kube-public
 spec:
-  selector:
-    app: traefik
   type: NodePort
   ports:
   - name: web
     port: 80
-    targetPort: 80
-    nodePort: 30021  # HTTP proxy sur host (OBLIGATOIRE)
+    targetPort: 8000
+    nodePort: 30021  # Port spécifié dans le PDF
   - name: admin
-    port: 9090
-    targetPort: 9090
-    nodePort: 30042  # Admin dashboard sur host (OBLIGATOIRE)
+    port: 8080
+    targetPort: 8080
+    nodePort: 30080  # Pour le dashboard Traefik
+  selector:
+    app: traefik

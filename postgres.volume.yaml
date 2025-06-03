@@ -4,11 +4,13 @@ metadata:
   name: postgres-pv
 spec:
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
   hostPath:
-    path: "/tmp/postgres"
+    path: /tmp/postgres-data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -20,4 +22,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 5Gi
+  storageClassName: standard

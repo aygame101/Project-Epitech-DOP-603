@@ -13,18 +13,25 @@ spec:
       labels:
         app: poll
     spec:
+      restartPolicy: Always
       containers:
       - name: poll
         image: epitechcontent/t-dop-600-poll:k8s
-        resources:
-          limits:
-            memory: "128Mi"
+        ports:
+        - containerPort: 80
         env:
         - name: REDIS_HOST
           valueFrom:
             configMapKeyRef:
               name: redis-config
               key: REDIS_HOST
-        ports:
-        - containerPort: 80
-      restartPolicy: Always
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config
+              key: REDIS_PORT
+        resources:
+          limits:
+            memory: "128Mi"
+          requests:
+            memory: "64Mi"

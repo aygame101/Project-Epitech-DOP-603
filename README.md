@@ -57,24 +57,38 @@ http://localhost:30042/dashboard#/
 # Commandes dans l'ordre :
 ## Créer le cluster KIND
 (lancer docker)
-kind create cluster --config=kind-config.yaml --name=t-dop-603
+kind create cluster --config=kind-config.yaml --name=dop603
+kubectl cluster-info --context kind-dop603
+
+## Namespace kube-public
+kubectl create namespace kube-public
 
 ## Monitoring (cadvisor)
 kubectl apply -f cadvisor.daemonset.yaml
 
 ## PostgreSQL
 kubectl apply -f postgres.secret.yaml
-kubectl apply -f postgres.configmap.yaml
-kubectl apply -f postgres.volume.yaml
-kubectl apply -f postgres.deployment.yaml
-kubectl apply -f postgres.service.yaml
+-f postgres.configmap.yaml
+-f postgres.volume.yaml
+-f postgres.deployment.yaml
+-f postgres.service.yaml
 
 ## Redis
 kubectl apply -f redis.configmap.yaml
-kubectl apply -f redis.deployment.yaml
-kubectl apply -f redis.service.yaml
+-f redis.deployment.yaml
+-f redis.service.yaml
+
+## Poll
 kubectl apply -f poll.deployment.yaml
-kubectl apply -f poll.service.yaml
-kubectl apply -f poll.ingress.yaml
-kubectl apply -f result.deployment.yaml
-kubectl apply -f result.service.yaml
+-f poll.service.yaml
+-f poll.ingress.yaml
+-f result.deployment.yaml
+-f result.service.yaml
+
+## Traefik
+kubectl apply -f traefik.rbac.yaml 
+-f traefik.deployment.yaml 
+-f traefik.service.yaml
+
+## Table sql
+kubectl exec -i deployment/postgres -- psql -U postgres -c "CREATE TABLE IF NOT EXISTS votes (id VARCHAR(255) PRIMARY KEY, vote VARCHAR(255) NOT NULL);"
