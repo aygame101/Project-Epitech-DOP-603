@@ -33,3 +33,48 @@
 | 🔴 To do | Le monitoring des ressources et performances est correctement configuré |
 | 🔴 To do | La quantité et les chemins des volumes surveillés sont correctement configurés |
 | 🔴 To do | Toutes les tâches ont été effectuées |
+
+
+
+## Services applicatifs
+kubectl apply -f worker.deployment.yaml## Lancer l'app
+
+# Ajouter dans C:\Windows\System32\drivers\etc\hosts :
+127.0.0.1      poll.dop.io result.dop.io
+
+# Les différentes pages :
+
+### Page de vote
+http://poll.dop.io:30021
+
+### Page de résultats
+http://result.dop.io:30021
+
+### Page Traefik
+http://localhost:30042/dashboard#/
+
+
+# Commandes dans l'ordre :
+## Créer le cluster KIND
+(lancer docker)
+kind create cluster --config=kind-config.yaml --name=t-dop-603
+
+## Monitoring (cadvisor)
+kubectl apply -f cadvisor.daemonset.yaml
+
+## PostgreSQL
+kubectl apply -f postgres.secret.yaml
+kubectl apply -f postgres.configmap.yaml
+kubectl apply -f postgres.volume.yaml
+kubectl apply -f postgres.deployment.yaml
+kubectl apply -f postgres.service.yaml
+
+## Redis
+kubectl apply -f redis.configmap.yaml
+kubectl apply -f redis.deployment.yaml
+kubectl apply -f redis.service.yaml
+kubectl apply -f poll.deployment.yaml
+kubectl apply -f poll.service.yaml
+kubectl apply -f poll.ingress.yaml
+kubectl apply -f result.deployment.yaml
+kubectl apply -f result.service.yaml
