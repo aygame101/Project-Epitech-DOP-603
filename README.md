@@ -43,6 +43,14 @@
 ``Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "127.0.0.1 poll.dop.io"``
 ``Add-Content -Path C:\Windows\System32\drivers\etc\hosts -Value "127.0.0.1 result.dop.io"``
 
+Pour Mac:  
+echo "127.0.0.1 poll.dop.io" | sudo tee -a /etc/hosts > /dev/null  
+echo "127.0.0.1 result.dop.io" | sudo tee -a /etc/hosts > /dev/null  
+
+tail -n 10 /etc/hosts  
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder  
+
+
 ## Les différentes pages :
 
 ### Page de vote
