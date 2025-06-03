@@ -14,15 +14,15 @@
 | 🔴 To do | Les secrets Postgres sont correctement définis et stockés |
 | 🔴 To do | Les variables d'environnement du Poll sont correctement définies |
 | 🔴 To do | Les variables d'environnement du Result sont correctement définies |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
-| 🔴 To do |  |
+| 🔴 To do | Les variables d'environnement de Postgres sont correctement définies |
+| 🔴 To do | Un volume persistant existe pour Postgres |
+| 🔴 To do | Le volume Postgres est déployé correctement |
+| 🔴 To do | Le service Postgres est correctement configuré |
+| 🔴 To do | Le service Redis est correctement configuré |
+| 🔴 To do | Le service Poll est correctement configuré |
+| 🔴 To do | Le service Traefik est correctement configuré |
+| 🔴 To do | Les règles de routage du trafic Poll sont correctement définies |
+| 🔴 To do | L'affinité du Poll est correctement configurée |
 | 🔴 To do |  |
 | 🔴 To do |  |
 | 🔴 To do |  |
