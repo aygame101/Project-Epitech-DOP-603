@@ -14,24 +14,26 @@ spec:
         app: poll
     spec:
       restartPolicy: Always
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - poll
+            topologyKey: kubernetes.io/hostname
       containers:
       - name: poll
         image: epitechcontent/t-dop-600-poll:k8s
         ports:
         - containerPort: 80
-        env:
-        - name: REDIS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: redis-config
-              key: REDIS_HOST
-        - name: REDIS_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: redis-config
-              key: REDIS_PORT
+        envFrom:
+        - configMapRef:
+            name: redis-config
         resources:
           limits:
-            memory: "128Mi"
+            memory: "128M"
           requests:
-            memory: "64Mi"
+            memory: "64M"

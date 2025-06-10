@@ -8,11 +8,11 @@ spec:
   ports:
   - name: web
     port: 80
-    targetPort: 8000
-    nodePort: 30021  # Port spécifié dans le PDF
+    targetPort: 80
+    nodePort: 30021 
   - name: admin
     port: 8080
     targetPort: 8080
-    nodePort: 30042  # Pour le dashboard Traefik
+    nodePort: 30042
   selector:
     app: traefik

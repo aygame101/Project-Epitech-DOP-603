@@ -4,7 +4,7 @@ metadata:
   name: result-ingress
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: traefik
+    #kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:

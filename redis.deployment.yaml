@@ -19,15 +19,3 @@ spec:
         image: redis:5.0
         ports:
         - containerPort: 6379
-        env:
-        - name: REDIS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: redis-config
-              key: REDIS_HOST
-        - name: REDIS_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: redis-config
-              key: REDIS_PORT
-

@@ -13,9 +13,10 @@ spec:
         name: cadvisor
     spec:
       hostNetwork: true
+      restartPolicy: Always
       containers:
       - name: cadvisor
-        image: gcr.io/cadvisor/cadvisor:v0.47.0
+        image: gcr.io/cadvisor/cadvisor:latest
         ports:
         - containerPort: 8080
           name: http
@@ -25,12 +26,15 @@ spec:
           readOnly: true
         - name: var-run
           mountPath: /var/run
-          readOnly: false
+          readOnly: true
         - name: sys
           mountPath: /sys
           readOnly: true
         - name: docker
           mountPath: /var/lib/docker
+          readOnly: true
+        - name: dev-disk
+          mountPath: /dev/disk
           readOnly: true
         args:
         - --housekeeping_interval=10s
@@ -54,6 +58,9 @@ spec:
       - name: docker
         hostPath:
           path: /var/lib/docker
+      - name: dev-disk
+        hostPath:
+          path: /dev/disk
       tolerations:
       - operator: "Exists"
         effect: "NoExecute"

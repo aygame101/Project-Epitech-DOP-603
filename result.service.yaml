@@ -7,6 +7,6 @@ spec:
   selector:
     app: result
   ports:
-  - port: 80
+  - port: 80      #voir écriture
     targetPort: 80
   type: ClusterIP

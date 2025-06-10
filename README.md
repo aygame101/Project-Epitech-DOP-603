@@ -1,38 +1,38 @@
 # Project-Epitech-DOP-603
-
-
+  
+  
 ## Gestion Avancement du Projet
 🔴 To do  
 🟠 In progress  
 🟢 Done
 | Avancement | Tâches |
 | :--------- |:------ |
-| 🟠 In progress | Le déploiement du Result est OK |
-| 🟠 In progress | Le déploiement du Worker est OK |
-| 🟠 In progress | Le déploiement de Postgres est OK |
-| 🟠 In progress | Le déploiement de Redis est OK |
-| 🟠 In progress | Le déploiement de Traefik est OK |
-| 🟠 In progress | Le configmap de Postgres est OK |
-| 🟠 In progress | Le configmap de Redis est OK |
-| 🟠 In progress | Les secrets Postgres sont correctement définis et stockés |
-| 🟠 In progress | Les variables d'environnement du Poll sont correctement définies |
-| 🟠 In progress | Les variables d'environnement du Result sont correctement définies |
-| 🟠 In progress | Les variables d'environnement de Postgres sont correctement définies |
-| 🟠 In progress | Un volume persistant existe pour Postgres |
-| 🟠 In progress | Le volume Postgres est déployé correctement |
-| 🟠 In progress | Le service Postgres est correctement configuré |
-| 🟠 In progress | Le service Redis est correctement configuré |
-| 🟠 In progress | Le service Poll est correctement configuré |
-| 🟠 In progress | Le service Traefik est correctement configuré |
-| 🟠 In progress | Les règles de routage du trafic Poll sont correctement définies |
-| 🟠 In progress | L'affinité du Poll est correctement configurée |
-| 🟠 In progress | Les ressources du Poll sont correctement configurées |
-| 🟠 In progress | L'affinité du Result est correctement configurée |
-| 🟠 In progress | Les ressources du Result sont correctement configurées |
-| 🟠 In progress | L'affinité du Traefik est correctement configurée |
-| 🟠 In progress | Le monitoring des ressources et performances est correctement configuré |
-| 🟠 In progress | La quantité et les chemins des volumes surveillés sont correctement configurés |
-| 🟠 In progress | Toutes les tâches ont été effectuées |
+| 🟢 Done | Le déploiement du Result est OK |
+| 🟢 Done | Le déploiement du Worker est OK |
+| 🟢 Done | Le déploiement de Postgres est OK |
+| 🟢 Done | Le déploiement de Redis est OK |
+| 🟢 Done | Le déploiement de Traefik est OK |
+| 🟢 Done | Le configmap de Postgres est OK |
+| 🟢 Done | Le configmap de Redis est OK |
+| 🟢 Done | Les secrets Postgres sont correctement définis et stockés |
+| 🟢 Done | Les variables d'environnement du Poll sont correctement définies |
+| 🟢 Done | Les variables d'environnement du Result sont correctement définies |
+| 🟢 Done | Les variables d'environnement de Postgres sont correctement définies |
+| 🟢 Done | Un volume persistant existe pour Postgres |
+| 🟢 Done | Le volume Postgres est déployé correctement |
+| 🟢 Done | Le service Postgres est correctement configuré |
+| 🟢 Done | Le service Redis est correctement configuré |
+| 🟢 Done | Le service Poll est correctement configuré |
+| 🟢 Done | Le service Traefik est correctement configuré |
+| 🟢 Done | Les règles de routage du trafic Poll sont correctement définies |
+| 🟢 Done | L'affinité du Poll est correctement configurée |
+| 🟢 Done | Les ressources du Poll sont correctement configurées |
+| 🟢 Done | L'affinité du Result est correctement configurée |
+| 🟢 Done | Les ressources du Result sont correctement configurées |
+| 🟢 Done | L'affinité du Traefik est correctement configurée |
+| 🟢 Done | Le monitoring des ressources et performances est correctement configuré |
+| 🟢 Done | La quantité et les chemins des volumes surveillés sont correctement configurés |
+| 🟢 Done | Toutes les tâches ont été effectuées |
 
 
 # Lancer l'app :
@@ -89,3 +89,9 @@ http://localhost:30042/dashboard#/
   
 ## Table sql  
 ``kubectl exec -i deployment/postgres -- psql -U postgres -c "CREATE TABLE IF NOT EXISTS votes (id VARCHAR(255) PRIMARY KEY, vote VARCHAR(255) NOT NULL);"``  
+
+
+# Relancer l'app :  
+  
+## Services applicatifs  
+``kubectl apply -f worker.deployment.yaml``
